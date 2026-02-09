@@ -1,17 +1,9 @@
-////////////////////////////////////////////////////////////////////////////////
-//
-// Filename:	rtl/addrdecode.v
-// {{{
-// Project:	WB2AXIPSP: bus bridges and other odds and ends
-//
-// Purpose:	Supports bus crossbars by answering the question, which slave
-//		does the current address need to be routed to?  Requests are
-//	pipelined using valid/!stall handshaking.  For those familiar with
-//	AXI, READY=!STALL.  The outgoing stream is identical to the incoming
-//	one, save for the (new) o_decode field.  This is a bitmask containing
-//	one bit for each slave that the request might be routed to, and one
+//Address Decoder
+// Purpose:	Supports bus crossbars by answering the question, which slave does the current address need to be routed to?
+// Requests are pipelined using valid/!stall handshaking.  For those familiar with AXI, READY=!STALL.
+// The outgoing stream is identical to the incoming one, save for the (new) o_decode field.
+// This is a bitmask containing one bit for each slave that the request might be routed to, and one
 //	extra bit to indicate no slaves matched.
-//
 //	The keys to the operation of this module are found in the two
 //	parameters, SLAVE_ADDR and SLAVE_MASK.
 //
@@ -35,32 +27,7 @@
 //	bits, and hence 8kB slaves may be aliased to many places in memory.
 //	Bus composition and address assignment, however, are both outside of
 //	the scope of the operation of this module.
-//	
-//
-// Creator:	Dan Gisselquist, Ph.D.
-//		Gisselquist Technology, LLC
-//
-////////////////////////////////////////////////////////////////////////////////
-// }}}
-// Copyright (C) 2019-2025, Gisselquist Technology, LLC
-// {{{
-// This file is part of the WB2AXIP project.
-//
-// The WB2AXIP project contains free software and gateware, licensed under the
-// Apache License, Version 2.0 (the "License").  You may not use this project,
-// or this file, except in compliance with the License.  You may obtain a copy
-// of the License at
-// }}}
-//	http://www.apache.org/licenses/LICENSE-2.0
-// {{{
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-// WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
-// License for the specific language governing permissions and limitations
-// under the License.
-//
-////////////////////////////////////////////////////////////////////////////////
-//
+
 `default_nettype	none
 // }}}
 module	addrdecode #(
