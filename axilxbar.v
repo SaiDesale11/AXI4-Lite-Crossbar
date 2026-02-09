@@ -1,9 +1,4 @@
-////////////////////////////////////////////////////////////////////////////////
-//
-// Filename:	rtl/axilxbar.v
-// {{{
-// Project:	WB2AXIPSP: bus bridges and other odds and ends
-//
+// Main Module axilxbar
 // Purpose:	Create a full crossbar between NM AXI-lite sources (masters),
 //		and NS AXI-lite slaves.  Every master can talk to any slave,
 //	provided it isn't already busy.
@@ -50,32 +45,6 @@
 //	If OPT_LOWPOWER is set, then unused values will be set to zero.
 //	This can also be used to help identify relevant values within any
 //	trace.
-//
-//
-// Creator:	Dan Gisselquist, Ph.D.
-//		Gisselquist Technology, LLC
-//
-////////////////////////////////////////////////////////////////////////////////
-// }}}
-// Copyright (C) 2019-2025, Gisselquist Technology, LLC
-// {{{
-// This file is part of the WB2AXIP project.
-//
-// The WB2AXIP project contains free software and gateware, licensed under the
-// Apache License, Version 2.0 (the "License").  You may not use this project,
-// or this file, except in compliance with the License.  You may obtain a copy
-// of the License at
-// }}}
-//	http://www.apache.org/licenses/LICENSE-2.0
-// {{{
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-// WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
-// License for the specific language governing permissions and limitations
-// under the License.
-//
-////////////////////////////////////////////////////////////////////////////////
-//
 `default_nettype none
 // }}}
 module	axilxbar #(
